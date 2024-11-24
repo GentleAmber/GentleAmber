@@ -1,1 +1,25 @@
-testing
+# A good example to remember try/except and if/elif/else grammar:
+########################################################################################
+# Input a score to store in variable s. If it's not a number, print error; if it's not in [0,1], print error.
+# Else, grade the score.
+s = input("Enter a score:")
+try:
+    s=float(s)
+except:
+    s=-1
+
+# Give grade based on the value of s
+if s>1:
+    print("error")
+elif s>=0.9:
+    print('A')
+elif s>=0.8:
+    print('B')
+elif s>=0.7:
+    print('C')
+elif s>=0.6:
+    print('D')
+elif s>=0:
+    print('F')
+else:
+    print('error')
