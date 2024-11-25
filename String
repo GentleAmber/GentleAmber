@@ -1,0 +1,13 @@
+# This is the last chapter of all the basics. I'm so excited.
+# Some tricky thing happened. If I run "python" in the terminal first and then run any script, the system will 
+# keep prompting "invalid Syntax". I'll have to type "quit()" in the terminal to make it right.
+
+# This programme extracts the number is the text and convert the number to float before printing it.
+
+text = "X-DSPAM-Confidence:    0.8475"
+innum=text.find(":")
+print(innum)
+numPre=text[innum+1:]
+num=numPre.strip()
+num=float(num)
+print(num)
