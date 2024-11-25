@@ -1,0 +1,17 @@
+# This shows how to extract email addresses with sentences starting with the string "From " from a specific text
+# where the email addresses are right after "From " the string.
+
+fname = input("Enter file name: ")
+if len(fname) < 1:
+    fname = "mbox-short.txt"
+
+fh = open(fname)
+count=0
+lst=list()
+for line in fh:
+    lineSep=line.rstrip()
+    if lineSep.startswith("From "):
+        lst=lineSep.split()
+        print(lst[1])
+        count=count+1
+print("There were", count, "lines in the file with From as the first word")
