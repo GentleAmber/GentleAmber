@@ -1,0 +1,21 @@
+# This shows the basics of how to open and read a file
+
+fname = input("Enter file name: ")
+try:
+    fh = open(fname)
+except:
+    print("File",fname,"not found")
+    quit()
+total=0
+count=0
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence:"):
+        continue
+    count=count+1
+    pin=line.find(":")
+    numPre=line[pin+1:]
+    num=numPre.strip()
+    num=float(num)
+    total=total+num
+average = total/count
+print("Average spam confidence:",average)
